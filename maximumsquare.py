@@ -37,11 +37,6 @@ def maximumSquare(matrix):
 
                 print("i, j, k, l, maximumSum", i, j, k, l, maximumSum)
         
-                if l == 0 or k == 0:
-                    currentSum = currrentSum + k + l
-                    if currentSum > maximumSum:
-                        maximumSum = currentSum
-                    continue
                 if l > k:
                     maxDepth = l
                     for p in range(k):
