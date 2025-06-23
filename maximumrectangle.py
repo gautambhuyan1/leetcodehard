@@ -1,4 +1,5 @@
 # Given a rows x cols binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
+
 def inputMatrix():
     """
     Reads a matrix from standard input.
@@ -10,7 +11,7 @@ def inputMatrix():
     return matrix
 
 
-def maximumRectangle(matrix): 
+def maximumSquare(matrix): 
 
     m = len(matrix)
     n = len(matrix[0])
@@ -21,6 +22,7 @@ def maximumRectangle(matrix):
     currentSum = 0
     k = 0
     j = 0
+    ax = ay = bx = by = 0
 
     for i in range(m):
         for j in range(n):
@@ -37,6 +39,7 @@ def maximumRectangle(matrix):
 
                 #print("i, j, k, l, maximumSum", i, j, k, l, maximumSum)
         
+
                 if l > k:
                     maxDepth = l
                     for p in range(k):
@@ -47,6 +50,10 @@ def maximumRectangle(matrix):
                             maxDepth = x
                         currentSum = (p + 1) * maxDepth
                         if currentSum > maximumSum:
+                            ay = i
+                            ax = j
+                            by = i + maxDepth
+                            bx = j + p
                             maximumSum = currentSum
                 else:
                     maxDepth = k
@@ -58,9 +65,13 @@ def maximumRectangle(matrix):
                             maxDepth = x
                         currentSum = (p + 1) * maxDepth
                         if currentSum > maximumSum:
+                            ay = i
+                            ax = j
+                            by = i + p
+                            bx = j + maxDepth
                             maximumSum = currentSum
                          
-    print("Maximum square sum:", maximumSum)
+    print("Maximum square sum: ax, bx, ay, by", maximumSum, ax, bx, ay, by)
     return maximumSum
                 
                 
@@ -70,4 +81,4 @@ mat = inputMatrix()
 
 print("Matrix:", mat)
 
-maximumRectangle(mat)
+maximumSquare(mat)
