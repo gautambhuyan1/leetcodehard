@@ -10,7 +10,7 @@ def inputMatrix():
     return matrix
 
 
-def maximumSquare(matrix): 
+def maximumRectangle(matrix): 
 
     m = len(matrix)
     n = len(matrix[0])
@@ -70,4 +70,4 @@ mat = inputMatrix()
 
 print("Matrix:", mat)
 
-maximumSquare(mat)
+maximumRectangle(mat)
