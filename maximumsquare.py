@@ -54,7 +54,7 @@ def maximumSquare(matrix):
                         if currentSum > maximumSum:
                             maximumSum = currentSum
                 else:
-                    maxDepth = l
+                    maxDepth = k
                     for p in range(l):
                         x = 0
                         while (j + x) < n and matrix[i + p][j + x] == 1:
