@@ -15,7 +15,7 @@ def maximumSquare(matrix):
     m = len(matrix)
     n = len(matrix[0])
 
-    print("m, n", m, n)
+    #print("m, n", m, n)
 
     maximumSum = 0
     currentSum = 0
@@ -35,7 +35,7 @@ def maximumSquare(matrix):
                 while (i + l) < m and matrix[i + l][j] == 1:
                     l = l + 1
 
-                print("i, j, k, l, maximumSum", i, j, k, l, maximumSum)
+                #print("i, j, k, l, maximumSum", i, j, k, l, maximumSum)
         
                 if l > k:
                     maxDepth = l
