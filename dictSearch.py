@@ -1,11 +1,14 @@
 
-# Find the path from one to another in a dictionary, such that each adjascent word differs from the next by one character
-# The Code first creates a graph of the dictionary where the nearest neighbors differ by maximum one character. Then if employs depth first search to find the laddar or words.
+# Find the path from one word to another in a dictionary, such that each adjascent word differs from the next by maximum one character
+# The Code first creates a graph of the dictionary where the nearest neighbors differ by maximum one character. Then, it employs depth first search to find the laddar of words.
 
 
 def qualify(a: str, b: str) -> int:
 
     diffCount = 0 
+
+    if len(a) != len(b):
+        return 100
 
     for i in range(len(a)):
         if a[i] != b[i]:
